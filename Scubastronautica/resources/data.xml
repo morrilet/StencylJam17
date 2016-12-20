@@ -1,2 +1,139 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<pack/>
+<pack>
+    <custom-block blocktag="custom-4" blocktype="NORMAL" code="cast(.say(&quot;Camera Follow&quot;, &quot;_customBlock_DistanceBetweenActors&quot;, [, ]), Float)" desc="Returns distance between two actors." global="false" gui="Distance between %1 and %2" id="4" message="DistanceBetweenActors" name="DistanceBetweenActors" oid="-1" return="number" shared="false" snippetID="8">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="Actor1" order="1" type="actor"/>
+        <blank name="Actor2" order="2" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-5" blocktype="NORMAL" code="cast(.say(&quot;Camera Follow&quot;, &quot;_customBlock_DistanceBetweenPoints&quot;, [, , , ]), Float)" desc="Gets the distance between two points." global="false" gui="Distance between %1 %2 and %3 %4" id="5" message="DistanceBetweenPoints" name="DistanceBetweenPoints" oid="-1" return="number" shared="false" snippetID="8">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="x1" order="1" type="number"/>
+        <blank name="y1" order="2" type="number"/>
+        <blank name="x2" order="3" type="number"/>
+        <blank name="y2" order="4" type="number"/>
+    </custom-block>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="6" fixedrot="false" fric="0.2" gid="4" id="2" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Harpoon" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="3" static="false">
+        <snippets>
+            <s enabled="true" id="9">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="false"/>
+                <prop id="2" list="0" val="Fly_Left"/>
+                <prop id="3" list="0" val="Fly_Right"/>
+            </s>
+            <s enabled="true" id="11">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val=".15"/>
+                <prop id="3" list="0" val="3"/>
+                <prop id="5" list="0" val="false"/>
+                <prop id="6" list="0" val="true"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="32" id="3" name="Harpoon" shared="false" width="222">
+        <anim across="10" down="10" durations="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" height="320" id="0" loop="true" name="Fly_Right" numframes="100" originx="111" originy="16" sync="false" version="2" width="2220">
+            <poly data="4,0,0,222,0,222,32,0,32" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="11" down="10" durations="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" height="3100" id="1" loop="true" name="Bounce_Right" numframes="105" originx="147" originy="155" sync="false" version="2" width="3234">
+            <poly data="4,0,0,294,0,294,310,0,310" density="0.1" fric="0.2" gid="-1000" id="0" name="Bounce" rest="0.0" sensor="true"/>
+        </anim>
+        <anim across="10" down="10" durations="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" height="320" id="2" loop="true" name="Fly_Left" numframes="100" originx="111" originy="16" sync="false" version="2" width="2220">
+            <poly data="4,0,0,222,0,222,32,0,32" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="11" down="10" durations="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" height="3100" id="3" loop="true" name="Bounce_Left" numframes="105" originx="147" originy="155" sync="false" version="2" width="3234">
+            <poly data="4,0,0,294,0,294,310,0,310" density="0.1" fric="0.2" gid="-1000" id="0" name="Bounce" rest="0.0" sensor="true"/>
+        </anim>
+    </sprite>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="4" fixedrot="false" fric="0.2" gid="0" id="0" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Scubastronaut" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="1" static="false">
+        <snippets>
+            <s enabled="true" id="1">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="11" list="0" val="15.0"/>
+                <prop id="31" list="0" val="up"/>
+                <prop id="32" list="0" val="down"/>
+                <prop id="33" list="0" val="left"/>
+                <prop id="34" list="0" val="right"/>
+                <prop id="35" list="0" val="0.0"/>
+                <prop id="36" list="0" val="0.0"/>
+                <prop id="37" list="0" val="true"/>
+                <prop id="38" list="0" val="0.0"/>
+                <prop id="39" list="0" val="true"/>
+                <prop id="40" list="0" val="true"/>
+                <prop id="49" list="0" val="true"/>
+                <prop id="50" list="0" val="Idle_Right"/>
+                <prop id="51" list="0" val="Swim_Right"/>
+                <prop id="52" list="0" val="Idle_Left"/>
+                <prop id="53" list="0" val="Swim_Left"/>
+                <prop id="54" list="0" val="Idle_Left"/>
+                <prop id="55" list="0" val="Swim_Left"/>
+                <prop id="56" list="0" val="Idle_Right"/>
+                <prop id="57" list="0" val="Swim_Right"/>
+                <prop id="58" list="0" val="false"/>
+                <prop id="60" list="0" val="0"/>
+                <prop id="61" list="0" val="0"/>
+                <prop id="62" list="0" val="false"/>
+            </s>
+            <s enabled="true" id="3">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
+            <s enabled="true" id="5">
+                <prop id="32" list="0" val="Based on Animations"/>
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="2" list="0" val="50.0"/>
+                <prop id="4" list="0" val="2"/>
+                <prop id="5" list="0" val="-1"/>
+                <prop id="9" list="0" val="0.0"/>
+                <prop id="13" list="0" val="action1"/>
+                <prop id="15" list="0" val="0.0"/>
+                <prop id="16" list="0" val="true"/>
+                <prop id="17" list="0" val="true"/>
+                <prop id="18" list="0" val="false"/>
+                <prop id="19" list="0" val="1.0"/>
+                <prop id="20" list="0" val="0.0"/>
+                <prop id="21" list="0" val="false"/>
+                <prop id="22" list="0" val="false"/>
+                <prop id="23" list="0" val="3.0"/>
+                <prop id="24" list="0" val="5.0"/>
+                <prop id="25" list="0" val="5.0"/>
+                <prop id="26" list="0" val="false"/>
+                <prop id="28" list="0" val=""/>
+                <prop id="29" list="0" val=""/>
+                <prop id="30" list="0" val="Left"/>
+                <prop id="31" list="0" val="Right"/>
+            </s>
+            <s enabled="true" id="8">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="0.0"/>
+                <prop id="4" list="0" val="0.0"/>
+                <prop id="6" list="0" val="0.0"/>
+                <prop id="8" list="0" val="0.0"/>
+                <prop id="9" list="0" val="1"/>
+                <prop id="10" list="0" val="150"/>
+                <prop id="11" list="0" val="0"/>
+                <prop id="12" list="0" val="150"/>
+                <prop id="13" list="0" val="150"/>
+                <prop id="14" list="0" val="0"/>
+                <prop id="15" list="0" val="0"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="1" defaultAnimation="1" desc="" height="55" id="1" name="Scubastronaut" shared="false" width="50">
+        <anim across="18" down="17" durations="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" height="1649" id="0" loop="false" name="Death_Right" numframes="301" originx="30" originy="48" sync="false" version="2" width="1098">
+            <poly data="4,0,0,61,0,61,97,0,97" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="15" down="14" durations="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" height="770" id="1" loop="true" name="Idle_Right" numframes="200" originx="25" originy="27" sync="false" version="2" width="750">
+            <poly data="4,0,0,50,0,50,55,0,55" density="0.1" fric="0.2" gid="-1000" id="0" name="Idle_Right" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="15" down="14" durations="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" height="742" id="2" loop="true" name="Swim_Right" numframes="200" originx="31" originy="26" sync="false" version="2" width="930">
+            <poly data="4,0,0,62,0,62,53,0,53" density="0.1" fric="0.2" gid="-1000" id="0" name="Swim_Right" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="18" down="17" durations="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" height="1649" id="3" loop="false" name="Death_Left" numframes="301" originx="30" originy="48" sync="false" version="2" width="1098">
+            <poly data="4,0,0,61,0,61,97,0,97" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="15" down="14" durations="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" height="742" id="4" loop="true" name="Swim_Left" numframes="200" originx="31" originy="26" sync="false" version="2" width="930">
+            <poly data="4,0,0,62,0,62,53,0,53" density="0.1" fric="0.2" gid="-1000" id="0" name="Swim_Right" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="15" down="14" durations="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" height="770" id="5" loop="true" name="Idle_Left" numframes="200" originx="25" originy="27" sync="false" version="2" width="750">
+            <poly data="4,0,0,50,0,50,55,0,55" density="0.1" fric="0.2" gid="-1000" id="0" name="Idle_Right" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+</pack>
